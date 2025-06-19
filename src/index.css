@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-wordle-dark text-white font-sans;
+  }
+}
+
+@layer components {
+  .tile {
+    @apply w-10 h-10 sm:w-12 sm:h-12 border-2 border-wordle-light flex items-center justify-center text-lg sm:text-xl font-bold uppercase;
+  }
+  
+  .tile-correct {
+    @apply bg-wordle-green border-wordle-green text-white;
+  }
+  
+  .tile-present {
+    @apply bg-wordle-yellow border-wordle-yellow text-white;
+  }
+  
+  .tile-absent {
+    @apply bg-wordle-gray border-wordle-gray text-white;
+  }
+  
+  .keyboard-key {
+    @apply px-2 py-3 sm:px-3 sm:py-4 bg-wordle-light text-wordle-dark font-semibold rounded cursor-pointer hover:bg-gray-300 transition-colors text-sm sm:text-base;
+  }
+  
+  .keyboard-key-correct {
+    @apply bg-wordle-green text-white;
+  }
+  
+  .keyboard-key-present {
+    @apply bg-wordle-yellow text-white;
+  }
+  
+  .keyboard-key-absent {
+    @apply bg-wordle-gray text-white;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .tile {
+    @apply w-9 h-9 text-base;
+  }
+  
+  .keyboard-key {
+    @apply px-1.5 py-2.5 text-xs min-w-[1.5rem];
+  }
+  
+  .keyboard-key.enter-key {
+    @apply min-w-[3rem];
+  }
+  
+  .keyboard-key.delete-key {
+    @apply min-w-[2rem];
+  }
+} 
